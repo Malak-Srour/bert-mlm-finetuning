@@ -121,11 +121,11 @@ def predict_single_masked_word(text, model, tokenizer):
 ## 📊 Example Results
 
 ### Input Examples
-\`\`\`
+```
 "The quick brown [MASK] jumps over the lazy dog."
 "I love to eat [MASK] for breakfast."
 "The capital of France is [MASK]."
-\`\`\`
+```
 
 ### Model Predictions
 The fine-tuned model can predict contextually appropriate words:
@@ -136,25 +136,25 @@ The fine-tuned model can predict contextually appropriate words:
 ## 🔧 Customization Options
 
 ### Adjust Masking Probability
-\`\`\`python
+```python
 # Change masking percentage
 mlm_probability = 0.20  # Mask 20% of tokens instead of 15%
-\`\`\`
+```
 
 ### Modify Training Parameters
-\`\`\`python
+```python
 # Experiment with different settings
 batch_size = 16        # Larger batches (if GPU memory allows)
 learning_rate = 2e-5   # Lower learning rate for stability
 epochs = 3             # More training epochs
-\`\`\`
+```
 
 ### Use Different Datasets
-\`\`\`python
+```python
 # Try other text datasets
 dataset = load_dataset("wikipedia", "20220301.en", streaming=True)
 dataset = load_dataset("openwebtext", streaming=True)
-\`\`\`
+```
 
 ## 📈 Performance Monitoring
 
@@ -169,28 +169,28 @@ The notebook includes:
 ### Common Issues
 
 **CUDA Out of Memory**
-\`\`\`python
+```python
 # Reduce batch size
 batch_size = 4  # or even 2
 
 # Enable gradient checkpointing
 model.gradient_checkpointing_enable()
-\`\`\`
+```
 
 **Slow Training**
-\`\`\`python
+```python
 # Use smaller dataset sample
 filtered_texts = [next(iter(dataset["train"]))["text"] for _ in range(50)]
 
 # Enable mixed precision training
 from torch.cuda.amp import autocast, GradScaler
-\`\`\`
+```
 
 **Dataset Loading Issues**
-\`\`\`python
+```python
 # If BookCorpus fails, try alternative datasets
 dataset = load_dataset("wikitext", "wikitext-2-raw-v1", streaming=True)
-\`\`\`
+```
 
 ## 🚀 Advanced Usage
 
