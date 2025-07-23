@@ -41,14 +41,14 @@ bert-mlm-finetuning/
 
 ### 1. Installation
 
-\`\`\`bash
+```bash
 # Clone the repository
 git clone https://github.com/Malak-Srour/bert-mlm-finetuning.git
 cd bert-mlm-finetuning
 
 # Install dependencies
 pip install -r requirements.txt
-\`\`\`
+```
 
 ### 2. Run the Notebook
 
