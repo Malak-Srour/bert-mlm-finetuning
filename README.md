@@ -25,7 +25,7 @@ This project fine-tunes a pre-trained BERT model on the BookCorpus dataset to im
 
 ## 📁 Project Structure
 
-\`\`\`
+```text
 bert-mlm-finetuning/
 ├── bert_mlm_finetuning.ipynb    # Main Jupyter notebook
 ├── requirements.txt             # Python dependencies
@@ -35,7 +35,7 @@ bert-mlm-finetuning/
 │   ├── pytorch_model.bin
 │   └── tokenizer files
 └── outputs/                   # Training outputs and logs
-\`\`\`
+```
 
 ## 🚀 Quick Start
 
@@ -43,7 +43,7 @@ bert-mlm-finetuning/
 
 \`\`\`bash
 # Clone the repository
-git clone https://github.com/yourusername/bert-mlm-finetuning.git
+git clone https://github.com/Malak-Srour/bert-mlm-finetuning.git
 cd bert-mlm-finetuning
 
 # Install dependencies
@@ -218,9 +218,6 @@ dataset = load_dataset("wikitext", "wikitext-2-raw-v1", streaming=True)
 4. Push to the branch (\`git push origin feature/improvement\`)
 5. Create a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
