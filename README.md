@@ -52,14 +52,14 @@ pip install -r requirements.txt
 
 ### 2. Run the Notebook
 
-\`\`\`bash
+```bash
 # Start Jupyter notebook
 jupyter notebook bert_mlm_finetuning.ipynb
-\`\`\`
+```
 
 ### 3. Quick Test (After Training)
 
-\`\`\`python
+```python
 from transformers import BertTokenizer, BertForMaskedLM
 
 # Load your fine-tuned model
@@ -69,7 +69,7 @@ tokenizer = BertTokenizer.from_pretrained('./bert_finetuned')
 # Test prediction
 text = "The capital of France is [MASK]."
 # Use the prediction functions from the notebook
-\`\`\`
+```
 
 ## 📖 Implementation Details
 
@@ -86,37 +86,37 @@ text = "The capital of France is [MASK]."
 - **Scheduler** - Linear warmup and decay
 
 ### Training Configuration
-\`\`\`python
+```python
 # Key hyperparameters
 BATCH_SIZE = 8
 LEARNING_RATE = 5e-5
 MAX_LENGTH = 512
 MLM_PROBABILITY = 0.15
 EPOCHS = 1  # Adjust based on your needs
-\`\`\`
+```
 
 ## 🎯 Key Functions
 
 ### 1. Text Masking
-\`\`\`python
+```python
 def mask_text(text, tokenizer, mlm_probability=0.3):
     """Applies random masking to create MLM training examples"""
-\`\`\`
+```
 
 ### 2. Custom Dataset Class
-\`\`\`python
+```python
 class MaskedLanguageModelingDataset(Dataset):
     """Handles text preprocessing and masking for training"""
-\`\`\`
+```
 
 ### 3. Prediction Functions
-\`\`\`python
+```python
 def predict_top_k_masked_word(text, model, tokenizer, top_k=5):
     """Predicts top-k most likely words for [MASK] tokens"""
 
 def predict_single_masked_word(text, model, tokenizer):
     """Predicts single most likely word for [MASK] tokens"""
-\`\`\`
+```
 
 ## 📊 Example Results
 
